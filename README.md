@@ -42,13 +42,6 @@ This project uses GPT-2 which runs completely locally on your machine:
 - Model is cached locally for subsequent runs
 - Runs on CPU, no GPU required
 
-## Configuration
-
-Create a `.env` file in the root directory with the following variables:
-```
-OPENAI_API_KEY=your_api_key_here
-```
-
 ## Project Structure
 
 - `main.py`: Main application entry point
@@ -102,3 +95,43 @@ ENV/
 .vscode/
 .idea/
 .DS_Store" > .gitignore
+```
+
+echo '[project]
+name = "ai-assistant"
+version = "0.1.0"
+description = "AI-Powered Personal Assistant for Task Automation"
+authors = ["Ashish Gaonker <ashish.gec@gmail.com>"]
+dependencies = [
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "fastapi>=0.100.0",
+    "uvicorn>=0.23.0",
+    "python-multipart>=0.0.6",
+    "transformers>=4.30.0",
+    "torch>=2.0.0",
+    "numpy>=1.24.0",
+    "scikit-learn>=1.0.0"
+]
+requires-python = ">=3.9"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ai_assistant"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+]' > pyproject.toml

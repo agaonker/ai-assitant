@@ -2,7 +2,7 @@
 name = "ai-assistant"
 version = "0.1.0"
 description = "AI-Powered Personal Assistant for Task Automation"
-authors = []
+authors = ["Ashish Gaonker <ashish.gec@gmail.com>"]
 dependencies = [
     "pydantic>=2.0.0",
     "pydantic-settings>=2.0.0",
