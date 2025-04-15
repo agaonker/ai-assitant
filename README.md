@@ -1,36 +1,46 @@
 # AI-Powered Personal Assistant
 
-An intelligent personal assistant built with Python, Pydantic, and open-source cloud models. This assistant can help automate tasks, manage schedules, and provide intelligent responses to user queries.
+An intelligent personal assistant built with Python, Pydantic, and GPT-2 running locally. This assistant can help automate tasks, manage schedules, and provide intelligent responses to user queries.
 
 ## Features
 
 - Task automation and management
-- Natural language processing capabilities
+- Natural language processing using local GPT-2 model
 - Schedule management
 - Intelligent response generation
 - Extensible architecture
+- No API keys required - runs completely offline
 
 ## Installation
 
 1. Clone the repository
 2. Create a virtual environment:
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows: .venv\\Scripts\\activate
    ```
 3. Install dependencies:
    ```bash
-   pip install -r requirements.txt
+   pip install -e .
    ```
 
 ## Usage
 
 1. Start the assistant:
    ```bash
-   python main.py
+   python src/ai_assistant/main.py
    ```
 
 2. The assistant will be available at `http://localhost:8000`
+3. Open `http://localhost:8000/docs` for interactive API documentation
+
+## Model Information
+
+This project uses GPT-2 which runs completely locally on your machine:
+- No API keys required
+- First run will download the model (~500MB)
+- Model is cached locally for subsequent runs
+- Runs on CPU, no GPU required
 
 ## Configuration
 
